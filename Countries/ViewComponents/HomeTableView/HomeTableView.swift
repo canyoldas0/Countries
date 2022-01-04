@@ -74,5 +74,16 @@ extension HomeTableView: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.isUserInteractionEnabled = false
+        cell?.startTappedAnimation(with: { [weak self] finish in
+            if finish {
+                self?.delegate?.selectedItem(at: indexPath.row)
+                cell?.isUserInteractionEnabled = true
+            }
+        })
+    }
+    
     
 }

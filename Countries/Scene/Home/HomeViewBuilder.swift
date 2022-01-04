@@ -18,6 +18,8 @@ class HomeViewBuilder {
         viewController.title = "Home"
         viewController.tabBarItem.image = TabBarImages.home.value
         viewController.tabBarItem.selectedImage = TabBarImages.homeSelected.value
-        return viewController
+        
+        let navigationVC = UINavigationController(rootViewController: viewController)
+        return navigationVC
     }
 }

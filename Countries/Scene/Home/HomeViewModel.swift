@@ -12,6 +12,7 @@ class HomeViewModel {
     
     var dataFormatter: HomeViewDataFormatterProtocol!
     var listState: ViewStateBlock?
+    var detailState: DetailRequestBlock?
     
     init(dataFormatter: HomeViewDataFormatterProtocol) {
         self.dataFormatter = dataFormatter
@@ -22,10 +23,13 @@ class HomeViewModel {
         listState = completion
     }
     
+    func subscribeDetailRequestState(with completion: @escaping DetailRequestBlock) {
+        detailState = completion
+    }
+    
     private func getListRequest() -> CountryListRequest {
         return CountryListRequest()
     }
-    
     
     // MARK: Network Request Methods
     func getData() {

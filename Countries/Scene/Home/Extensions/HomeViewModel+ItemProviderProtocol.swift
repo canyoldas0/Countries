@@ -25,6 +25,6 @@ extension HomeViewModel: ItemProviderProtocol {
     }
     
     func selectedItem(at index: Int) {
-//        detailViewState?(DetailDataRequest(id: dataFormatter.getItemId(at: index)))
+        detailState?(CountryDetailRequest(id: dataFormatter.getItemId(at: index)))
     }
 }
