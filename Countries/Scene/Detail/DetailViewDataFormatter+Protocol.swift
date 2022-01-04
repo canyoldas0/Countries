@@ -12,27 +12,29 @@ import BaseModules
 protocol DetailViewDataFormatterProtocol {
     
     func setData(with response: CountryDetailResponse)
-    func getItem() -> GenericDataProtocol?
+    func getItem(at index: Int) -> GenericDataProtocol?
     func getNumberOfSection() -> Int
     func getNumberOfItem(in section: Int) -> Int
-    func getTitle() -> String
-    func getItemId() -> String
+    func getTitle(at index: Int) -> String
+    func getItemId(at index: Int) -> String
+    func getImageUrl(at index: Int) -> String
+    func getCountryCode(at index: Int) -> String
 }
 
 class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
     
-    private var detailElement: CountryDetail?
+    private var detailElement: [CountryDetail?] = [CountryDetail]()
     
     
     func setData(with response: CountryDetailResponse) {
-        self.detailElement = response.data
+        self.detailElement.append(response.data)
     }
     
-    func getItem() -> GenericDataProtocol? {
+    func getItem(at index: Int) -> GenericDataProtocol? {
         return DetailViewComponentData(
-            imageData: CustomImageViewComponentData(imageUrl: getImageUrl()),
-            countryCode: getCountryCode(),
-            id: getItemId())
+            imageData: CustomImageViewComponentData(imageUrl: getImageUrl(at: index)),
+            countryCode: getCountryCode(at: index),
+            id: getItemId(at: index))
     }
     
     func getNumberOfSection() -> Int {
@@ -40,23 +42,23 @@ class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
     }
     
     func getNumberOfItem(in section: Int) -> Int {
-        return 1
+        return detailElement.count
     }
     
-    func getImageUrl() -> String {
-        return detailElement?.flagImageURI ?? ""
+    func getImageUrl(at index: Int) -> String {
+        return detailElement[index]?.flagImageURI ?? ""
     }
     
-    func getCountryCode() -> String {
-        return detailElement?.code ?? ""
+    func getCountryCode(at index: Int) -> String {
+        return detailElement[index]?.code ?? ""
     }
     
-    func getTitle() -> String {
-        return detailElement?.name ?? ""
+    func getTitle(at index: Int) -> String {
+        return detailElement[index]?.name ?? ""
     }
     
-    func getItemId() -> String {
-        return detailElement?.wikiDataID ?? ""
+    func getItemId(at index: Int) -> String {
+        return detailElement[index]?.wikiDataID ?? ""
     }
     
     

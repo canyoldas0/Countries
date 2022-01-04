@@ -21,8 +21,7 @@ class DetailView: GenericBaseView<DetailViewData> {
         temp.allowsSelection = false
         temp.bounces = false
         temp.separatorStyle = .none
-        temp.estimatedRowHeight = 600
-        temp.rowHeight = UITableView.automaticDimension
+        temp.rowHeight = 500
         temp.showsVerticalScrollIndicator = false
         temp.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
         return temp
@@ -46,7 +45,6 @@ class DetailView: GenericBaseView<DetailViewData> {
         }
     }
 }
-
 
 extension DetailView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

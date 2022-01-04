@@ -16,6 +16,8 @@ class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
         let temp = CustomImageViewComponentContainer()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.clipsToBounds = true
+        temp.heightAnchor.constraint(equalToConstant: 196).isActive = true
+        temp.widthAnchor.constraint(equalToConstant: 108).isActive = true
         return temp
     }()
     
@@ -42,7 +44,6 @@ class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
             make.leading.equalToSuperview()
             make.top.equalToSuperview().inset(10)
             make.trailing.equalToSuperview()
-            make.height.equalTo(300)
         }
         
         countryCodeLabel.snp.makeConstraints { make in

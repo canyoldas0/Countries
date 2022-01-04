@@ -10,8 +10,8 @@ import Foundation
 
 class DetailViewModel {
     
-    private let dataFormatter: DetailViewDataFormatterProtocol
     private let request: CountryDetailRequest
+    let dataFormatter: DetailViewDataFormatterProtocol
     var viewState: ViewStateBlock?
     
     init(dataFormatter: DetailViewDataFormatterProtocol,
@@ -29,10 +29,7 @@ class DetailViewModel {
         self.viewState = completion
     }
     
-    func getViewData() -> DetailViewComponentData {
-        return dataFormatter.getItem() as! DetailViewComponentData
-    }
-    
+
     func getDetailData() {
         do {
             guard let urlRequest = try? CountryDetailProvider(with: getDetailRequest()).returnUrlRequest() else { return }

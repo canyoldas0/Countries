@@ -69,6 +69,7 @@
 		844C9FE52784E031008B94C4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE42784E031008B94C4 /* DetailView.swift */; };
 		844C9FE72784E03C008B94C4 /* DetailViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE62784E03C008B94C4 /* DetailViewData.swift */; };
 		844C9FEA2784E108008B94C4 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE92784E108008B94C4 /* DetailTableViewCell.swift */; };
+		844C9FED2784E7E2008B94C4 /* DetailViewModel+ItemProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FEC2784E7E2008B94C4 /* DetailViewModel+ItemProviderProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		844C9FE42784E031008B94C4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		844C9FE62784E03C008B94C4 /* DetailViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewData.swift; sourceTree = "<group>"; };
 		844C9FE92784E108008B94C4 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		844C9FEC2784E7E2008B94C4 /* DetailViewModel+ItemProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewModel+ItemProviderProtocol.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 		844C9FC42784AB85008B94C4 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				844C9FEB2784E7C1008B94C4 /* Extensions */,
 				844C9FC52784AB92008B94C4 /* DetailViewModel.swift */,
 				844C9FC72784ABD5008B94C4 /* DetailViewController.swift */,
 				844C9FC92784ABF2008B94C4 /* DetailViewBuilder.swift */,
@@ -431,6 +434,14 @@
 				844C9FE22784BD28008B94C4 /* DetailViewComponent.swift */,
 			);
 			path = CustomDetailViewComponent;
+			sourceTree = "<group>";
+		};
+		844C9FEB2784E7C1008B94C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				844C9FEC2784E7E2008B94C4 /* DetailViewModel+ItemProviderProtocol.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +571,7 @@
 				844C9F8A278430F1008B94C4 /* MainTabBarBuilder.swift in Sources */,
 				844C9FC62784AB92008B94C4 /* DetailViewModel.swift in Sources */,
 				844C9FCF2784B3F4008B94C4 /* CountryDetailProvider.swift in Sources */,
+				844C9FED2784E7E2008B94C4 /* DetailViewModel+ItemProviderProtocol.swift in Sources */,
 				844C9FDF2784BB2C008B94C4 /* CustomImageLoadingType.swift in Sources */,
 				844C9FD32784B68A008B94C4 /* DetailViewDataFormatter+Protocol.swift in Sources */,
 				844C9FBC27844423008B94C4 /* HomeViewDataFormatter+Protocol.swift in Sources */,

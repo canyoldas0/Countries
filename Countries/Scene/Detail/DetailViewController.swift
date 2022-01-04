@@ -11,7 +11,7 @@ import BaseModules
 
 class DetailViewController: BaseViewController<DetailViewModel> {
     
-    private var detailView: DetailViewComponent!
+    private var detailView: DetailView!
     
     override func prepareViewControllerSetup() {
         super.prepareViewControllerSetup()
@@ -26,18 +26,15 @@ class DetailViewController: BaseViewController<DetailViewModel> {
     }
     
     private func addDetailView() {
-        detailView = DetailViewComponent()
+        detailView = DetailView()
+        detailView.delegate = viewModel
         view.addSubview(detailView)
+        
         detailView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
-    
-    private func setViewData() {
-        DispatchQueue.main.async {
-            self.detailView.setData(data: self.viewModel.getViewData())
-        }
-    }
+
     
     private func listenViewModel() {
         
@@ -45,7 +42,7 @@ class DetailViewController: BaseViewController<DetailViewModel> {
             
             switch state {
             case .done:
-                self?.setViewData()
+                self?.detailView.reloadTableView()
             case .failure:
                 return
             case .loading:
