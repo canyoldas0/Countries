@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BaseModules",
+        "repositoryURL": "https://github.com/canyoldas0/BaseModules",
+        "state": {
+          "branch": "main",
+          "revision": "1ebdabf32a1d0db20318ee52766528991ed8852d",
+          "version": null
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
+        "state": {
+          "branch": "develop",
+          "revision": "466db39ee4ef32b0f7c8cd9f009aaf42f80beace",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
