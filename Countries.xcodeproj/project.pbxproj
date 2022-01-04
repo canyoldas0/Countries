@@ -66,6 +66,9 @@
 		844C9FE02784BB2C008B94C4 /* CustomImageViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FDC2784BB2C008B94C4 /* CustomImageViewComponentData.swift */; };
 		844C9FE12784BB2C008B94C4 /* CustomImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FDD2784BB2C008B94C4 /* CustomImageViewComponent.swift */; };
 		844C9FE32784BD28008B94C4 /* DetailViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE22784BD28008B94C4 /* DetailViewComponent.swift */; };
+		844C9FE52784E031008B94C4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE42784E031008B94C4 /* DetailView.swift */; };
+		844C9FE72784E03C008B94C4 /* DetailViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE62784E03C008B94C4 /* DetailViewData.swift */; };
+		844C9FEA2784E108008B94C4 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FE92784E108008B94C4 /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +131,9 @@
 		844C9FDC2784BB2C008B94C4 /* CustomImageViewComponentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentData.swift; sourceTree = "<group>"; };
 		844C9FDD2784BB2C008B94C4 /* CustomImageViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponent.swift; sourceTree = "<group>"; };
 		844C9FE22784BD28008B94C4 /* DetailViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponent.swift; sourceTree = "<group>"; };
+		844C9FE42784E031008B94C4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		844C9FE62784E03C008B94C4 /* DetailViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewData.swift; sourceTree = "<group>"; };
+		844C9FE92784E108008B94C4 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,8 +331,9 @@
 		844C9FA927843EA9008B94C4 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				844C9FE82784E0C2008B94C4 /* CustomDetailViewComponent */,
 				844C9FD92784BB1A008B94C4 /* CustomImageViewComponents */,
-				844C9FD42784BAEB008B94C4 /* DetailViewComponent */,
+				844C9FD42784BAEB008B94C4 /* DetailView */,
 				844C9FAA27843EB2008B94C4 /* HomeTableView */,
 			);
 			path = ViewComponents;
@@ -396,13 +403,14 @@
 			path = CountryDetail;
 			sourceTree = "<group>";
 		};
-		844C9FD42784BAEB008B94C4 /* DetailViewComponent */ = {
+		844C9FD42784BAEB008B94C4 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				844C9FD52784BAFB008B94C4 /* DetailViewComponentData.swift */,
-				844C9FE22784BD28008B94C4 /* DetailViewComponent.swift */,
+				844C9FE42784E031008B94C4 /* DetailView.swift */,
+				844C9FE62784E03C008B94C4 /* DetailViewData.swift */,
+				844C9FE92784E108008B94C4 /* DetailTableViewCell.swift */,
 			);
-			path = DetailViewComponent;
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		844C9FD92784BB1A008B94C4 /* CustomImageViewComponents */ = {
@@ -414,6 +422,15 @@
 				844C9FDC2784BB2C008B94C4 /* CustomImageViewComponentData.swift */,
 			);
 			path = CustomImageViewComponents;
+			sourceTree = "<group>";
+		};
+		844C9FE82784E0C2008B94C4 /* CustomDetailViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				844C9FD52784BAFB008B94C4 /* DetailViewComponentData.swift */,
+				844C9FE22784BD28008B94C4 /* DetailViewComponent.swift */,
+			);
+			path = CustomDetailViewComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844C9FEA2784E108008B94C4 /* DetailTableViewCell.swift in Sources */,
 				844C9FBA278443F9008B94C4 /* Typealiases.swift in Sources */,
 				844C9FE32784BD28008B94C4 /* DetailViewComponent.swift in Sources */,
 				844C9FD62784BAFB008B94C4 /* DetailViewComponentData.swift in Sources */,
@@ -504,6 +522,7 @@
 				844C9F88278430E0008B94C4 /* MainTabBarController.swift in Sources */,
 				844C9F7C27843086008B94C4 /* URLRequest+Extension.swift in Sources */,
 				844C9FC1278448E7008B94C4 /* HomeTableViewCell.swift in Sources */,
+				844C9FE72784E03C008B94C4 /* DetailViewData.swift in Sources */,
 				844C9F7427843072008B94C4 /* URLParameterEncoder.swift in Sources */,
 				844C9FAE27843ED3008B94C4 /* HomeTableView.swift in Sources */,
 				844C9F8327843097008B94C4 /* ServerResponse.swift in Sources */,
@@ -511,6 +530,7 @@
 				844C9FD82784BB17008B94C4 /* ImageCacheManager.swift in Sources */,
 				844C9F6D27843064008B94C4 /* HTTPHeader.swift in Sources */,
 				844C9F9227843164008B94C4 /* HomeViewController.swift in Sources */,
+				844C9FE52784E031008B94C4 /* DetailView.swift in Sources */,
 				844C9F99278431F8008B94C4 /* SavedViewController.swift in Sources */,
 				844C9F7727843072008B94C4 /* ParameterEncoding+Protocol.swift in Sources */,
 				844C9FCA2784ABF2008B94C4 /* DetailViewBuilder.swift in Sources */,
