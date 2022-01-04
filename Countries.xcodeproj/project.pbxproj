@@ -51,6 +51,7 @@
 		844C9FBC27844423008B94C4 /* HomeViewDataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FBB27844423008B94C4 /* HomeViewDataFormatter.swift */; };
 		844C9FBF27844812008B94C4 /* HomeViewModel+ItemProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FBE27844812008B94C4 /* HomeViewModel+ItemProviderProtocol.swift */; };
 		844C9FC1278448E7008B94C4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FC0278448E7008B94C4 /* HomeTableViewCell.swift */; };
+		844C9FC327848403008B94C4 /* HomeTableViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9FC227848403008B94C4 /* HomeTableViewCellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		844C9FBB27844423008B94C4 /* HomeViewDataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataFormatter.swift; sourceTree = "<group>"; };
 		844C9FBE27844812008B94C4 /* HomeViewModel+ItemProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+ItemProviderProtocol.swift"; sourceTree = "<group>"; };
 		844C9FC0278448E7008B94C4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		844C9FC227848403008B94C4 /* HomeTableViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 				844C9FAB27843EC1008B94C4 /* HomeTableViewData.swift */,
 				844C9FAD27843ED3008B94C4 /* HomeTableView.swift */,
 				844C9FC0278448E7008B94C4 /* HomeTableViewCell.swift */,
+				844C9FC227848403008B94C4 /* HomeTableViewCellData.swift */,
 			);
 			path = HomeTableView;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				844C9F9027843156008B94C4 /* HomeViewModel.swift in Sources */,
 				844C9FAC27843EC1008B94C4 /* HomeTableViewData.swift in Sources */,
 				844C9FA627843CCA008B94C4 /* CountryListProvider.swift in Sources */,
+				844C9FC327848403008B94C4 /* HomeTableViewCellData.swift in Sources */,
 				844C9F942784317F008B94C4 /* HomeViewBuilder.swift in Sources */,
 				844C9FB8278443C2008B94C4 /* UIView+Extension.swift in Sources */,
 				844C9F8427843097008B94C4 /* ApiConnectionErrorType.swift in Sources */,

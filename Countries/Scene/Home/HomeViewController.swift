@@ -18,6 +18,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     override func prepareViewControllerSetup() {
         super.prepareViewControllerSetup()
         configureUI()
+        listenViewModel()
+        viewModel.getData()
     }
     
     
@@ -35,6 +37,22 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             make.top.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
+        }
+    }
+    
+    
+    private func listenViewModel() {
+        
+        viewModel.subscribeListState { [weak self] state in
+            
+            switch state {
+            case .done:
+                self?.homeView.reloadTableView()
+            case .loading:
+                return
+            case .failure:
+                return
+            }
         }
     }
     

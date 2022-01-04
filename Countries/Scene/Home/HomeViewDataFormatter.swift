@@ -31,9 +31,8 @@ class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     }
     
     func getItem(at index: Int) -> GenericDataProtocol? {
-        return nil
+        return HomeTableViewCellData(countryName: getTitle(at: index))
     }
-
     
     func getNumberOfSection() -> Int {
         return 1

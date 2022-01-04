@@ -8,6 +8,7 @@
 
 import UIKit
 import BaseModules
+import SnapKit
 
 class HomeTableViewCell: BaseTableViewCell {
     
@@ -16,11 +17,11 @@ class HomeTableViewCell: BaseTableViewCell {
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.layer.borderColor = AppTheme.primary.value.cgColor
         temp.layer.borderWidth = 2
-        temp.layer.cornerRadius = 20
+        temp.layer.cornerRadius = 15
         return temp
     }()
     
-    private lazy var contryNameLabel: UILabel = {
+    private lazy var countryNameLabel: UILabel = {
         let temp = UILabel()
         temp.textAlignment = .left
         temp.text = "Turkey "
@@ -33,4 +34,26 @@ class HomeTableViewCell: BaseTableViewCell {
     }()
     
     
+    override func addMajorViews() {
+        super.addMajorViews()
+        addViewComponents()
+    }
+    
+    private func addViewComponents() {
+        contentView.addSubview(container)
+        container.addSubview(countryNameLabel)
+        
+        container.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(10)
+        }
+        
+        countryNameLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(10)
+        }
+    }
+    
+    func setData(by data: GenericDataProtocol) {
+        guard let data = data as? HomeTableViewCellData else { return }
+        countryNameLabel.text = data.countryName
+    }
 }
