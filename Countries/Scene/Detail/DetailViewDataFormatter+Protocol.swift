@@ -32,7 +32,7 @@ class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
     
     func getItem(at index: Int) -> GenericDataProtocol? {
         return DetailViewComponentData(
-            imageData: CustomImageViewComponentData(imageUrl: getImageUrl(at: index)),
+            imageData: getImageUrl(at: index),
             countryCode: getCountryCode(at: index),
             id: getItemId(at: index))
     }

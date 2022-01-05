@@ -10,7 +10,7 @@ import UIKit
 import BaseModules
 import SnapKit
 
-class HomeTableViewCell: BaseTableViewCell {
+class CountryListTableViewCell: BaseTableViewCell {
     
     private lazy var container: UIView = {
         let temp = UIView()
@@ -53,7 +53,7 @@ class HomeTableViewCell: BaseTableViewCell {
     }
     
     func setData(by data: GenericDataProtocol) {
-        guard let data = data as? HomeTableViewCellData else { return }
+        guard let data = data as? CountryListTableViewCellData else { return }
         countryNameLabel.text = data.countryName
     }
 }

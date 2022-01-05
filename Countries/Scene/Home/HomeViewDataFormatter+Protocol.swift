@@ -13,7 +13,7 @@ import BaseModules
 protocol HomeViewDataFormatterProtocol {
     
     
-    func setData(with response: CountryListResponse)
+    func setData(with response: [CountryData])
     func getItem(at index: Int) -> GenericDataProtocol?
     func getNumberOfSection() -> Int
     func getNumberOfItem(in section: Int) -> Int
@@ -26,12 +26,12 @@ class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     
     private var list: [CountryData] = [CountryData]()
     
-    func setData(with response: CountryListResponse) {
-        self.list.append(contentsOf: response.data)
+    func setData(with response: [CountryData]) {
+        self.list.append(contentsOf: response)
     }
     
     func getItem(at index: Int) -> GenericDataProtocol? {
-        return HomeTableViewCellData(countryName: getTitle(at: index))
+        return CountryListTableViewCellData(countryName: getTitle(at: index))
     }
     
     func getNumberOfSection() -> Int {

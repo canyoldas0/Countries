@@ -10,7 +10,7 @@ import Foundation
 
 class DetailViewModel {
     
-    private let request: CountryDetailRequest
+    let request: CountryDetailRequest
     let dataFormatter: DetailViewDataFormatterProtocol
     var viewState: ViewStateBlock?
     
@@ -20,46 +20,18 @@ class DetailViewModel {
         self.dataFormatter = dataFormatter
     }
     
-    private func getDetailRequest() -> CountryDetailRequest {
-        
-        return self.request
-    }
-    
     func subscribeViewState(with completion: @escaping ViewStateBlock) {
         self.viewState = completion
     }
     
-
-    func getDetailData() {
-        do {
-            guard let urlRequest = try? CountryDetailProvider(with: getDetailRequest()).returnUrlRequest() else { return }
-            viewState?(.loading)
-            fireApiCall(with: urlRequest, with: dataListener)
-        }
-    }
-    
-    private func fireApiCall(with request: URLRequest, with completion : @escaping (Result<CountryDetailResponse, ErrorResponse>) -> Void) {
-        
-        NetworkManager.shared.sendRequest(urlRequest: request, completion: completion)
-    }
-    
-    private func apiCallHandler(from response: CountryDetailResponse) {
-        
-        dataFormatter.setData(with: response)
-        // We let VC know that we have data now.
-        viewState?(.done)
-        
-    }
-    
-    private lazy var dataListener: (Result<CountryDetailResponse, ErrorResponse>) -> Void = { [weak self] result in
-        
-        switch result {
-        case .failure(let error):
-            return
-        case .success(let response):
-            self?.apiCallHandler(from: response)
-        }
-    }
-  
+    lazy var dataListener: (Result<CountryDetailResponse, ErrorResponse>) -> Void = { [weak self] result in
+       
+       switch result {
+       case .failure(let error):
+           return
+       case .success(let response):
+           self?.apiCallHandler(from: response)
+       }
+   }
 }
  

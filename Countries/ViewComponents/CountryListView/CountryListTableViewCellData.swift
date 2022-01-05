@@ -9,7 +9,7 @@
 import Foundation
 import BaseModules
 
-class HomeTableViewCellData: GenericDataProtocol {
+class CountryListTableViewCellData: GenericDataProtocol {
   
     private(set) var countryName: String
     

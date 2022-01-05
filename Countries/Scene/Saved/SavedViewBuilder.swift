@@ -11,12 +11,15 @@ import UIKit
 class SavedViewBuilder {
     
     class func build() -> UIViewController  {
-        
-        let viewModel = SavedViewModel()
+        let persistencyManager = PersistencyDataManager()
+        let dataFormatter = HomeViewDataFormatter()
+        let viewModel = SavedViewModel(dataFormatter: dataFormatter, persistencyManager: persistencyManager)
         let viewController = SavedViewController(viewModel: viewModel)
         viewController.title = "Saved"
         viewController.tabBarItem.image = TabBarImages.favorite.value
         viewController.tabBarItem.selectedImage = TabBarImages.favoriteSelected.value
-        return viewController
+        
+        let navigationVC = UINavigationController(rootViewController: viewController)
+        return navigationVC
     }
 }

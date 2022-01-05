@@ -8,6 +8,6 @@
 
 import Foundation
 
-class HomeTableViewData {
+class CountryListViewData {
     
 }

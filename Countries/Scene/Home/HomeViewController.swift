@@ -13,7 +13,7 @@ import SnapKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
-    private var homeView: HomeTableView!
+    private var homeView: CountryListView!
     
     override func prepareViewControllerSetup() {
         super.prepareViewControllerSetup()
@@ -28,7 +28,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private func addHomeView() {
-        homeView = HomeTableView()
+        homeView = CountryListView()
         homeView.delegate = viewModel
         view.addSubview(homeView)
         

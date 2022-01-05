@@ -13,15 +13,6 @@ import WebKit
 
 class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
     
-    private lazy var imageContainer: CustomImageViewComponentContainer = {
-        let temp = CustomImageViewComponentContainer()
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.clipsToBounds = true
-        temp.heightAnchor.constraint(equalToConstant: 196).isActive = true
-        temp.widthAnchor.constraint(equalToConstant: 108).isActive = true
-        return temp
-    }()
-    
     private lazy var webView: WKWebView = {
        let temp = WKWebView()
         temp.translatesAutoresizingMaskIntoConstraints = false
@@ -63,8 +54,7 @@ class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
     override func loadDataToView() {
         super.loadDataToView()
         guard let data = returnData() else { return }
-//        imageContainer.setData(data: data.imageData)
-        guard let url = URL(string: data.imageData.imageUrl) else { return }
+        guard let url = URL(string: data.imageData) else { return }
         let request = URLRequest(url: url)
         webView.load(request)
         countryCodeLabel.text = data.countryCode

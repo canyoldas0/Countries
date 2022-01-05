@@ -11,11 +11,11 @@ import BaseModules
 
 class DetailViewComponentData: GenericDataProtocol {
     
-    private(set) var imageData: CustomImageViewComponentData
+    private(set) var imageData: String
     private(set) var countryCode: String
     private(set) var id: String
     
-    init(imageData: CustomImageViewComponentData, countryCode: String, id: String) {
+    init(imageData: String, countryCode: String, id: String) {
         self.imageData = imageData
         self.countryCode = countryCode
         self.id = id
