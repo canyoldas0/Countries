@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import BaseModules
+import WebKit
 
 class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
     
@@ -18,6 +19,12 @@ class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
         temp.clipsToBounds = true
         temp.heightAnchor.constraint(equalToConstant: 196).isActive = true
         temp.widthAnchor.constraint(equalToConstant: 108).isActive = true
+        return temp
+    }()
+    
+    private lazy var webView: WKWebView = {
+       let temp = WKWebView()
+        temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
     
@@ -37,25 +44,29 @@ class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
     }
     
     private func addViewElements() {
-        addSubview(imageContainer)
+        addSubview(webView)
         addSubview(countryCodeLabel)
         
-        imageContainer.snp.makeConstraints { make in
+        webView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalToSuperview().inset(10)
             make.trailing.equalToSuperview()
+            make.height.equalTo(200)
         }
         
         countryCodeLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(15)
-            make.top.equalTo(imageContainer.snp.bottom).inset(30)
+            make.top.equalTo(webView.snp.bottom).offset(50)
         }
     }
     
     override func loadDataToView() {
         super.loadDataToView()
         guard let data = returnData() else { return }
-        imageContainer.setData(data: data.imageData)
+//        imageContainer.setData(data: data.imageData)
+        guard let url = URL(string: data.imageData.imageUrl) else { return }
+        let request = URLRequest(url: url)
+        webView.load(request)
         countryCodeLabel.text = data.countryCode
     }
 }

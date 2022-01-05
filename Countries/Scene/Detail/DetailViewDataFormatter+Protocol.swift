@@ -50,7 +50,7 @@ class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
     }
     
     func getCountryCode(at index: Int) -> String {
-        return detailElement[index]?.code ?? ""
+        return "Country code: \(detailElement[index]?.code ?? "")"
     }
     
     func getTitle(at index: Int) -> String {
