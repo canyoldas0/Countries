@@ -16,6 +16,7 @@ class SavedViewController: BaseViewController<SavedViewModel> {
     override func prepareViewControllerSetup() {
         super.prepareViewControllerSetup()
         configureUI()
+        viewModel.getData()
     }
     
     private func configureUI() {

@@ -21,6 +21,13 @@ class CountryListTableViewCell: BaseTableViewCell {
         return temp
     }()
     
+    private lazy var stackView: UIStackView = {
+       let temp = UIStackView(arrangedSubviews: [countryNameLabel,saveButton])
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.axis = .horizontal
+        return temp
+    }()
+    
     private lazy var countryNameLabel: UILabel = {
         let temp = UILabel()
         temp.textAlignment = .left
@@ -33,6 +40,12 @@ class CountryListTableViewCell: BaseTableViewCell {
         return temp
     }()
     
+    private lazy var saveButton: SaveButtonView = {
+       let temp = SaveButtonView()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
     
     override func addMajorViews() {
         super.addMajorViews()
@@ -41,19 +54,20 @@ class CountryListTableViewCell: BaseTableViewCell {
     
     private func addViewComponents() {
         contentView.addSubview(container)
-        container.addSubview(countryNameLabel)
+        container.addSubview(stackView)
         
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(10)
         }
         
-        countryNameLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
     
     func setData(by data: GenericDataProtocol) {
         guard let data = data as? CountryListTableViewCellData else { return }
+        saveButton.setData(data: data.saveButtonData)
         countryNameLabel.text = data.countryName
     }
 }

@@ -31,5 +31,4 @@ class SavedViewModel {
             self?.viewState?(.done)
         }
     }
-    
 }

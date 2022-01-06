@@ -16,11 +16,11 @@ extension SavedViewModel: ItemProviderProtocol {
     }
     
     func askNumberOfItem(in section: Int) -> Int {
-        return 1
+        return dataFormatter.getNumberOfItem(in: section)
     }
     
     func askData(at index: Int) -> GenericDataProtocol? {
-        return nil
+        return dataFormatter.getItem(at: index)
     }
     
 }

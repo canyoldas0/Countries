@@ -10,11 +10,14 @@ import Foundation
 import BaseModules
 
 class CountryListTableViewCellData: GenericDataProtocol {
-  
-    private(set) var countryName: String
     
-     init(countryName: String) {
+    private(set) var countryName: String
+    private(set) var saveButtonData: SaveButtonViewData
+    
+    init(countryName: String,
+         saveButtonData: SaveButtonViewData) {
         self.countryName = countryName
+        self.saveButtonData = saveButtonData
     }
     
 }

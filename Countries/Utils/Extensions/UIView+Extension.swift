@@ -21,5 +21,21 @@ extension UIView {
         self.layoutIfNeeded()
         
     }
+    
+    func startPressedAnimationCommon(withDuration: CGFloat = 0.3, completion: @escaping (_ finish: Bool) -> Void) {
         
+        UIView.animate(withDuration: TimeInterval(withDuration),
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.8),
+                       initialSpringVelocity: 0.3,
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+            
+            self.transform = CGAffineTransform.identity
+            
+        }, completion: completion)
+        
+        self.layoutIfNeeded()
+    }
+    
 }

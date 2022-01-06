@@ -11,3 +11,4 @@ import Foundation
 
 typealias ViewStateBlock = (ViewState) -> Void
 typealias DetailRequestBlock = (CountryDetailRequest) -> Void
+typealias BooleanBlock = (Bool) -> Void

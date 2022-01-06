@@ -10,6 +10,8 @@
 		841E8FE1278622EB00B6DA0D /* SavedViewModel+ItemProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE0278622EB00B6DA0D /* SavedViewModel+ItemProviderProtocol.swift */; };
 		841E8FE52786283800B6DA0D /* PersistencyDataManager+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE42786283800B6DA0D /* PersistencyDataManager+Protocol.swift */; };
 		841E8FE7278628AB00B6DA0D /* DetailViewModel+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE6278628AB00B6DA0D /* DetailViewModel+Network.swift */; };
+		841E8FEA2786BE6F00B6DA0D /* SaveButtonViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */; };
+		841E8FEC2786BEBC00B6DA0D /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */; };
 		844C9F45278429D8008B94C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9F44278429D8008B94C4 /* AppDelegate.swift */; };
 		844C9F4E278429DC008B94C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844C9F4D278429DC008B94C4 /* Assets.xcassets */; };
 		844C9F51278429DC008B94C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844C9F4F278429DC008B94C4 /* LaunchScreen.storyboard */; };
@@ -75,6 +77,8 @@
 		841E8FE0278622EB00B6DA0D /* SavedViewModel+ItemProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedViewModel+ItemProviderProtocol.swift"; sourceTree = "<group>"; };
 		841E8FE42786283800B6DA0D /* PersistencyDataManager+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistencyDataManager+Protocol.swift"; sourceTree = "<group>"; };
 		841E8FE6278628AB00B6DA0D /* DetailViewModel+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewModel+Network.swift"; sourceTree = "<group>"; };
+		841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonViewData.swift; sourceTree = "<group>"; };
+		841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
 		844C9F41278429D8008B94C4 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844C9F44278429D8008B94C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844C9F4D278429DC008B94C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 				841E8FE42786283800B6DA0D /* PersistencyDataManager+Protocol.swift */,
 			);
 			path = PersistencyManager;
+			sourceTree = "<group>";
+		};
+		841E8FE82786BE5600B6DA0D /* SaveButtonComponent */ = {
+			isa = PBXGroup;
+			children = (
+				841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */,
+				841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */,
+			);
+			path = SaveButtonComponent;
 			sourceTree = "<group>";
 		};
 		844C9F38278429D8008B94C4 = {
@@ -357,6 +370,7 @@
 		844C9FA927843EA9008B94C4 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				841E8FE82786BE5600B6DA0D /* SaveButtonComponent */,
 				844C9FE82784E0C2008B94C4 /* CustomDetailViewComponent */,
 				844C9FD42784BAEB008B94C4 /* DetailView */,
 				844C9FAA27843EB2008B94C4 /* CountryListView */,
@@ -548,6 +562,7 @@
 				841E8FE1278622EB00B6DA0D /* SavedViewModel+ItemProviderProtocol.swift in Sources */,
 				844C9FE72784E03C008B94C4 /* DetailViewData.swift in Sources */,
 				844C9F7427843072008B94C4 /* URLParameterEncoder.swift in Sources */,
+				841E8FEC2786BEBC00B6DA0D /* SaveButtonView.swift in Sources */,
 				844C9FAE27843ED3008B94C4 /* CountryListView.swift in Sources */,
 				844C9F8327843097008B94C4 /* ServerResponse.swift in Sources */,
 				844C9FA427843CB6008B94C4 /* CountryListRequest.swift in Sources */,
@@ -593,6 +608,7 @@
 				844C9F6C27843064008B94C4 /* HTTPMethod.swift in Sources */,
 				844C9F97278431E6008B94C4 /* SavedViewModel.swift in Sources */,
 				844C9F632784304F008B94C4 /* APIServiceProvider+Protocol.swift in Sources */,
+				841E8FEA2786BE6F00B6DA0D /* SaveButtonViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,8 @@ import UIKit
 class HomeViewBuilder {
     
     class func build() -> UIViewController {
-
-        let dataFormatter = HomeViewDataFormatter()
+        let persistencyManager = PersistencyDataManager()
+        let dataFormatter = HomeViewDataFormatter(persistencyManager: persistencyManager)
         let viewModel = HomeViewModel(dataFormatter: dataFormatter)
         let viewController = HomeViewController(viewModel: viewModel)
         viewController.title = "Home"

@@ -12,7 +12,7 @@ class SavedViewBuilder {
     
     class func build() -> UIViewController  {
         let persistencyManager = PersistencyDataManager()
-        let dataFormatter = HomeViewDataFormatter()
+        let dataFormatter = HomeViewDataFormatter(persistencyManager: persistencyManager)
         let viewModel = SavedViewModel(dataFormatter: dataFormatter, persistencyManager: persistencyManager)
         let viewController = SavedViewController(viewModel: viewModel)
         viewController.title = "Saved"
