@@ -23,6 +23,8 @@ enum AppTheme: GenericValueProtocol {
             return .white
         case .black:
             return .black
+        case .starred:
+            return UIColor(red: 0.99, green: 0.80, blue: 0.06, alpha: 1.00)
         }
     }
     
@@ -30,4 +32,5 @@ enum AppTheme: GenericValueProtocol {
     case secondary
     case white
     case black
+    case starred
 }

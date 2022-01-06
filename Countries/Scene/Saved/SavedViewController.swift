@@ -22,6 +22,7 @@ class SavedViewController: BaseViewController<SavedViewModel> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // The reason to call getData on willAppear is to get updated data each time navigating through on tabBar.
         viewModel.getData()
     }
     
@@ -37,10 +38,9 @@ class SavedViewController: BaseViewController<SavedViewModel> {
         view.addSubview(tableViewComponent)
         
         tableViewComponent.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
     }
-    
     
     private func listenViewModel() {
         
@@ -55,6 +55,17 @@ class SavedViewController: BaseViewController<SavedViewModel> {
                 return
             }
         }
+        
+        viewModel.subscribeDetailRequestState { [weak self] request in
+            self?.fireDetailView(with: request)
+        }
     }
+    
+    private func fireDetailView(with data: CountryDetailRequest) {
+        
+        let viewController = DetailViewBuilder.build(with: data)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
     
 }

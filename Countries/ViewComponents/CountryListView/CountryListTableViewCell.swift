@@ -15,14 +15,14 @@ class CountryListTableViewCell: BaseTableViewCell {
     private lazy var container: UIView = {
         let temp = UIView()
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.layer.cornerRadius = 15
         temp.layer.borderColor = AppTheme.primary.value.cgColor
         temp.layer.borderWidth = 2
-        temp.layer.cornerRadius = 15
         return temp
     }()
     
     private lazy var stackView: UIStackView = {
-       let temp = UIStackView(arrangedSubviews: [countryNameLabel,saveButton])
+        let temp = UIStackView(arrangedSubviews: [countryNameLabel,saveButton])
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.axis = .horizontal
         return temp
@@ -41,11 +41,10 @@ class CountryListTableViewCell: BaseTableViewCell {
     }()
     
     private lazy var saveButton: SaveButtonView = {
-       let temp = SaveButtonView()
+        let temp = SaveButtonView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
-    
     
     override func addMajorViews() {
         super.addMajorViews()
@@ -61,7 +60,7 @@ class CountryListTableViewCell: BaseTableViewCell {
         }
         
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
     }
     

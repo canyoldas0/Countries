@@ -13,6 +13,7 @@ class SavedViewModel {
     var dataFormatter: HomeViewDataFormatterProtocol!
     var persistencyManager: PersistencyDataProtocol!
     var viewState: ViewStateBlock?
+    var detailState: DetailRequestBlock?
     
      init(dataFormatter: HomeViewDataFormatterProtocol,
                   persistencyManager: PersistencyDataProtocol) {
@@ -22,6 +23,10 @@ class SavedViewModel {
     
     func subscribeViewState(with completion: @escaping ViewStateBlock) {
         self.viewState = completion
+    }
+    
+    func subscribeDetailRequestState(with completion: @escaping DetailRequestBlock) {
+        detailState = completion
     }
     
     func getData() {

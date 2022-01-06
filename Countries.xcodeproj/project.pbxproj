@@ -13,6 +13,7 @@
 		841E8FEA2786BE6F00B6DA0D /* SaveButtonViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */; };
 		841E8FEC2786BEBC00B6DA0D /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */; };
 		841E8FEE2787452900B6DA0D /* DataPersistencyStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FED2787452900B6DA0D /* DataPersistencyStatusProtocol.swift */; };
+		841E8FF027875B6200B6DA0D /* HomeViewModel+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FEF27875B6200B6DA0D /* HomeViewModel+Network.swift */; };
 		844C9F45278429D8008B94C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9F44278429D8008B94C4 /* AppDelegate.swift */; };
 		844C9F4E278429DC008B94C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844C9F4D278429DC008B94C4 /* Assets.xcassets */; };
 		844C9F51278429DC008B94C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844C9F4F278429DC008B94C4 /* LaunchScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonViewData.swift; sourceTree = "<group>"; };
 		841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
 		841E8FED2787452900B6DA0D /* DataPersistencyStatusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistencyStatusProtocol.swift; sourceTree = "<group>"; };
+		841E8FEF27875B6200B6DA0D /* HomeViewModel+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Network.swift"; sourceTree = "<group>"; };
 		844C9F41278429D8008B94C4 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844C9F44278429D8008B94C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844C9F4D278429DC008B94C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				844C9FBE27844812008B94C4 /* HomeViewModel+ItemProviderProtocol.swift */,
+				841E8FEF27875B6200B6DA0D /* HomeViewModel+Network.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				844C9F7E27843086008B94C4 /* Codable+Extension.swift in Sources */,
 				844C9F7627843072008B94C4 /* JSONParameterEncoder.swift in Sources */,
 				844C9F88278430E0008B94C4 /* MainTabBarController.swift in Sources */,
+				841E8FF027875B6200B6DA0D /* HomeViewModel+Network.swift in Sources */,
 				844C9F7C27843086008B94C4 /* URLRequest+Extension.swift in Sources */,
 				844C9FC1278448E7008B94C4 /* CountryListTableViewCell.swift in Sources */,
 				841E8FE1278622EB00B6DA0D /* SavedViewModel+ItemProviderProtocol.swift in Sources */,

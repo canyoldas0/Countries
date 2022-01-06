@@ -23,4 +23,7 @@ extension SavedViewModel: ItemProviderProtocol {
         return dataFormatter.getItem(at: index)
     }
     
+    func selectedItem(at index: Int) {
+        detailState?(CountryDetailRequest(id: dataFormatter.getItemId(at: index)))
+    }   
 }

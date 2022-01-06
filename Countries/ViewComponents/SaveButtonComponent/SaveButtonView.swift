@@ -55,7 +55,7 @@ class SaveButtonView: GenericBaseView<SaveButtonViewData> {
     private func colorManager() {
         guard let data = returnData() else { return }
         if data.state {
-            imageView.tintColor = .red
+            imageView.tintColor = AppTheme.starred.value
         } else {
             imageView.tintColor = AppTheme.black.value
         }

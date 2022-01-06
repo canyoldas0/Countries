@@ -36,10 +36,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         view.addSubview(homeView)
         
         homeView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
     }
     

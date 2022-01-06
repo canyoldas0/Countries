@@ -23,7 +23,7 @@ class DetailViewComponent: GenericBaseView<DetailViewComponentData> {
         let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.numberOfLines = 0
-        temp.font = .systemFont(ofSize: 14, weight: .medium)
+        temp.font = .systemFont(ofSize: 16, weight: .medium)
         temp.lineBreakMode = .byWordWrapping
         temp.text = " "
         return temp

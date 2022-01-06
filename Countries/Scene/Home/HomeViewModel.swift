@@ -26,31 +26,10 @@ class HomeViewModel {
     func subscribeDetailRequestState(with completion: @escaping DetailRequestBlock) {
         detailState = completion
     }
+
+    // MARK: Callbacks
     
-    private func getListRequest() -> CountryListRequest {
-        return CountryListRequest()
-    }
-    
-    // MARK: Network Request Methods
-    func getData() {
-        do {
-            guard let urlRequest = try? CountryListProvider(request: getListRequest()).returnUrlRequest() else { return }
-            fireApiCall(with: urlRequest, with: apiCallHandler)
-        }
-    }
-    
-    private func fireApiCall(with request: URLRequest, with completion: @escaping (Result<CountryListResponse, ErrorResponse>) -> Void) {
-        
-        NetworkManager.shared.sendRequest(urlRequest: request, completion: completion)
-    }
-    
-    private func dataHandler(with response: CountryListResponse) {
-        dataFormatter.refresh()
-        dataFormatter.setData(with: response.data)
-        listState?(.done)
-    }
-    
-    private lazy var apiCallHandler: (Result<CountryListResponse, ErrorResponse>) -> Void = { [weak self] result in
+     lazy var apiCallHandler: (Result<CountryListResponse, ErrorResponse>) -> Void = { [weak self] result in
         
         switch result {
         case .success(let data):

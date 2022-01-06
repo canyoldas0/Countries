@@ -67,6 +67,7 @@ extension CountryListView: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.setData(by: data)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -74,13 +75,16 @@ extension CountryListView: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
+    
         cell?.isUserInteractionEnabled = false
         cell?.startTappedAnimation(with: { [weak self] finish in
             if finish {
                 self?.delegate?.selectedItem(at: indexPath.row)
                 cell?.isUserInteractionEnabled = true
+               
             }
         })
     }
