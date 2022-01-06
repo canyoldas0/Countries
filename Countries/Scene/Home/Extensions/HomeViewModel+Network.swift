@@ -1,7 +1,7 @@
 //
 //  File name: HomeViewModel+Network.swift
 //  Description: <#Description#>
-//  Author: Can Yoldas (employee ID: c84203180) 
+//  Author: Can Yoldas (employee ID: //) 
 //  Date Created: 6.01.2022
 //  
 //
