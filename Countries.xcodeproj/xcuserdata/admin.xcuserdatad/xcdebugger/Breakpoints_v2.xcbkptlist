@@ -14,11 +14,14 @@
             symbolName = "*0x7fff20107716">
             <Locations>
                <Location
+                  uuid = "FCBDE5F2-6FE0-46D6-9A93-26F9D96D8B42 - 1a2fdeedbfecd9ac"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "__abort"
+                  moduleName = "libsystem_c.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
+                  offsetFromSymbolStart = "131">
                </Location>
             </Locations>
          </BreakpointContent>
