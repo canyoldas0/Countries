@@ -9,5 +9,10 @@
 import Foundation
 
 class CountryListRequest: Codable {
+
+    private(set) var limit: Int
     
+     init(limit: Int) {
+        self.limit = limit
+    }
 }

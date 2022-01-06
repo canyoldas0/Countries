@@ -13,4 +13,4 @@ typealias ViewStateBlock = (ViewState) -> Void
 typealias DetailRequestBlock = (CountryDetailRequest) -> Void
 typealias BooleanBlock = (Bool) -> Void
 typealias DetailResultBlock = (Result<CountryDetailResponse, ErrorResponse>) -> Void
-typealias ListResultBlock = (Result<CountryListResponse, ErrorResponse>) -> Void)
+typealias ListResultBlock = (Result<CountryListResponse, ErrorResponse>) -> Void

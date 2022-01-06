@@ -11,7 +11,7 @@ import Foundation
 extension HomeViewModel {
     
     private func getListRequest() -> CountryListRequest {
-        return CountryListRequest()
+        return CountryListRequest(limit: 10)
     }
     
     // MARK: Network Request Methods
