@@ -21,7 +21,11 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         listenViewModel()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getData()
+    }
+    
     private func configureUI() {
         addHomeView()
     }

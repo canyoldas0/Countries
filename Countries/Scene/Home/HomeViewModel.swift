@@ -45,6 +45,7 @@ class HomeViewModel {
     }
     
     private func dataHandler(with response: CountryListResponse) {
+        dataFormatter.refresh()
         dataFormatter.setData(with: response.data)
         listState?(.done)
     }
