@@ -17,6 +17,12 @@ class SavedViewController: BaseViewController<SavedViewModel> {
         super.prepareViewControllerSetup()
         configureUI()
         viewModel.getData()
+        listenViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     private func configureUI() {

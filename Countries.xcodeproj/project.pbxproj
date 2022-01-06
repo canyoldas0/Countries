@@ -12,6 +12,7 @@
 		841E8FE7278628AB00B6DA0D /* DetailViewModel+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE6278628AB00B6DA0D /* DetailViewModel+Network.swift */; };
 		841E8FEA2786BE6F00B6DA0D /* SaveButtonViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */; };
 		841E8FEC2786BEBC00B6DA0D /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */; };
+		841E8FEE2787452900B6DA0D /* DataPersistencyStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E8FED2787452900B6DA0D /* DataPersistencyStatusProtocol.swift */; };
 		844C9F45278429D8008B94C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C9F44278429D8008B94C4 /* AppDelegate.swift */; };
 		844C9F4E278429DC008B94C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844C9F4D278429DC008B94C4 /* Assets.xcassets */; };
 		844C9F51278429DC008B94C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844C9F4F278429DC008B94C4 /* LaunchScreen.storyboard */; };
@@ -79,6 +80,7 @@
 		841E8FE6278628AB00B6DA0D /* DetailViewModel+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewModel+Network.swift"; sourceTree = "<group>"; };
 		841E8FE92786BE6F00B6DA0D /* SaveButtonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonViewData.swift; sourceTree = "<group>"; };
 		841E8FEB2786BEBC00B6DA0D /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
+		841E8FED2787452900B6DA0D /* DataPersistencyStatusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistencyStatusProtocol.swift; sourceTree = "<group>"; };
 		844C9F41278429D8008B94C4 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844C9F44278429D8008B94C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844C9F4D278429DC008B94C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				844C9FB027843F51008B94C4 /* ItemProviderProtocol.swift */,
+				841E8FED2787452900B6DA0D /* DataPersistencyStatusProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				844C9F7D27843086008B94C4 /* String+Extension.swift in Sources */,
 				844C9F6E27843064008B94C4 /* HTTPHeaderFields.swift in Sources */,
 				844C9FBF27844812008B94C4 /* HomeViewModel+ItemProviderProtocol.swift in Sources */,
+				841E8FEE2787452900B6DA0D /* DataPersistencyStatusProtocol.swift in Sources */,
 				844C9F642784304F008B94C4 /* NetworkManager+Protocol.swift in Sources */,
 				844C9FC82784ABD5008B94C4 /* DetailViewController.swift in Sources */,
 				844C9FB5278443AA008B94C4 /* ViewState.swift in Sources */,

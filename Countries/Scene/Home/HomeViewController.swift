@@ -19,10 +19,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         super.prepareViewControllerSetup()
         configureUI()
         listenViewModel()
-        viewModel.getData()
     }
     
-    
+
     private func configureUI() {
         addHomeView()
     }

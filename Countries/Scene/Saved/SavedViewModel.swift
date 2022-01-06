@@ -26,9 +26,19 @@ class SavedViewModel {
     
     func getData() {
         viewState?(.loading)
+        self.dataFormatter.refresh()
         persistencyManager.getFavoriteItems { [weak self] data in
             self?.dataFormatter.setData(with: data)
             self?.viewState?(.done)
         }
     }
 }
+
+
+extension SavedViewModel: DataPersistencyStatusProtocol {
+    
+    func statusChanged() {
+        self.getData()
+    }
+}
+

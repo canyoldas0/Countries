@@ -19,11 +19,12 @@ protocol HomeViewDataFormatterProtocol {
     func getNumberOfItem(in section: Int) -> Int
     func getTitle(at index: Int) -> String
     func getItemId(at index: Int) -> String
+    func refresh()
 }
 
 class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     
-    
+    weak var delegate: DataPersistencyStatusProtocol?
     
     let persistencyManager: PersistencyDataProtocol!
     
@@ -50,8 +51,12 @@ class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     private func saveItemOperation(at index: Int, with value: Bool) {
         let item = list[index]
         value ? persistencyManager.addFavorite(with: item) : persistencyManager.removeFavourite(with: item)
+        self.delegate?.statusChanged()
     }
     
+    func refresh() {
+        self.list.removeAll()
+    }
 
     
     func getNumberOfSection() -> Int {
@@ -69,8 +74,4 @@ class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     func getItemId(at index: Int) -> String {
         return list[index].wikiDataID ?? ""
     }
-    
-
-    
-    
 }

@@ -14,7 +14,9 @@ class SavedViewBuilder {
         let persistencyManager = PersistencyDataManager()
         let dataFormatter = HomeViewDataFormatter(persistencyManager: persistencyManager)
         let viewModel = SavedViewModel(dataFormatter: dataFormatter, persistencyManager: persistencyManager)
+        
         let viewController = SavedViewController(viewModel: viewModel)
+        dataFormatter.delegate = viewModel
         viewController.title = "Saved"
         viewController.tabBarItem.image = TabBarImages.favorite.value
         viewController.tabBarItem.selectedImage = TabBarImages.favoriteSelected.value
