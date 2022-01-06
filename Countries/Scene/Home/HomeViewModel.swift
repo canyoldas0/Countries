@@ -29,7 +29,7 @@ class HomeViewModel {
 
     // MARK: Callbacks
     
-     lazy var apiCallHandler: (Result<CountryListResponse, ErrorResponse>) -> Void = { [weak self] result in
+     lazy var apiCallHandler: ListResultBlock = { [weak self] result in
         
         switch result {
         case .success(let data):

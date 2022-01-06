@@ -39,7 +39,6 @@ class SavedViewModel {
     }
 }
 
-
 extension SavedViewModel: DataPersistencyStatusProtocol {
     
     func statusChanged() {

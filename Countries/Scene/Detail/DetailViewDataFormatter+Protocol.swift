@@ -12,53 +12,65 @@ import BaseModules
 protocol DetailViewDataFormatterProtocol {
     
     func setData(with response: CountryDetailResponse)
-    func getItem(at index: Int) -> GenericDataProtocol?
-    func getNumberOfSection() -> Int
-    func getNumberOfItem(in section: Int) -> Int
-    func getTitle(at index: Int) -> String
-    func getItemId(at index: Int) -> String
-    func getImageUrl(at index: Int) -> String
-    func getCountryCode(at index: Int) -> String
+    func getItem() -> DetailViewComponentData
+    func getTitle() -> String
+    func getItemId() -> String
+    func getImageUrl() -> String
+    func getCountryCode() -> String
 }
 
 class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
     
-    private var detailElement: [CountryDetail?] = [CountryDetail]()
+    private var detailElement: CountryDetail?
+    private let persistencyManager: PersistencyDataProtocol!
     
+    init(persistencyManager: PersistencyDataProtocol) {
+        self.persistencyManager = persistencyManager
+    }
     
     func setData(with response: CountryDetailResponse) {
-        self.detailElement.append(response.data)
+        self.detailElement = response.data
     }
     
-    func getItem(at index: Int) -> GenericDataProtocol? {
+    func createCountryData() -> CountryData {
+        return CountryData(code: getCountryCode(),
+                           currencyCodes: nil, name: getTitle(), wikiDataID: getItemId())
+    }
+    
+    func getItem() -> DetailViewComponentData {
         return DetailViewComponentData(
-            imageData: getImageUrl(at: index),
-            countryCode: getCountryCode(at: index),
-            id: getItemId(at: index))
+            imageData: getImageUrl(),
+            countryCode: getCountryCode(),
+            id: getItemId(),
+            countryTitle: getTitle(),
+            saveButtonData: SaveButtonViewData(state: persistencyManager.checkExists(with: createCountryData()),
+                                               isSaved: saveItemListener))
+        
     }
     
-    func getNumberOfSection() -> Int {
-        return 1
+    private func saveItemOperation(with value: Bool) {
+        let item = createCountryData()
+        value ? persistencyManager.addFavorite(with: item) : persistencyManager.removeFavourite(with: item)
     }
     
-    func getNumberOfItem(in section: Int) -> Int {
-        return detailElement.count
+    private lazy var saveItemListener: BooleanBlock = { [weak self] value in
+        self?.saveItemOperation(with: value)
+    }
+        
+    func getImageUrl() -> String {
+        return detailElement?.flagImageURI ?? ""
     }
     
-    func getImageUrl(at index: Int) -> String {
-        return detailElement[index]?.flagImageURI ?? ""
+    func getCountryCode() -> String {
+        return "Country code: \(detailElement?.code ?? "")"
     }
     
-    func getCountryCode(at index: Int) -> String {
-        return "Country code: \(detailElement[index]?.code ?? "")"
+    func getTitle() -> String {
+        return detailElement?.name ?? ""
     }
     
-    func getTitle(at index: Int) -> String {
-        return detailElement[index]?.name ?? ""
-    }
-    
-    func getItemId(at index: Int) -> String {
-        return detailElement[index]?.wikiDataID ?? ""
+    func getItemId() -> String {
+        return detailElement?.wikiDataID ?? ""
     }
     
     

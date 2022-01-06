@@ -22,7 +22,7 @@ extension HomeViewModel {
         }
     }
     
-    func fireApiCall(with request: URLRequest, with completion: @escaping (Result<CountryListResponse, ErrorResponse>) -> Void) {
+    func fireApiCall(with request: URLRequest, with completion: @escaping ListResultBlock) {
         
         NetworkManager.shared.sendRequest(urlRequest: request, completion: completion)
     }

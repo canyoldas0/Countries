@@ -24,7 +24,7 @@ class DetailViewModel {
         self.viewState = completion
     }
     
-    lazy var dataListener: (Result<CountryDetailResponse, ErrorResponse>) -> Void = { [weak self] result in
+    lazy var dataListener: DetailResultBlock = { [weak self] result in
        
        switch result {
        case .failure(let error):
@@ -33,5 +33,13 @@ class DetailViewModel {
            self?.apiCallHandler(from: response)
        }
    }
+    
+    func getTitle() -> String {
+        return dataFormatter.getTitle()
+    }
+    
+    func getViewData() -> DetailViewComponentData {
+        return dataFormatter.getItem()
+    }
 }
  

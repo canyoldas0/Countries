@@ -11,30 +11,33 @@ import BaseModules
 
 class DetailViewController: BaseViewController<DetailViewModel> {
     
-    private var detailView: DetailView!
+    private var detailView: DetailViewComponent!
     
     override func prepareViewControllerSetup() {
         super.prepareViewControllerSetup()
         configureUI()
         listenViewModel()
-        viewModel.getDetailData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.getDetailData()
+    }
     
     private func configureUI() {
         addDetailView()
     }
     
     private func addDetailView() {
-        detailView = DetailView()
-        detailView.delegate = viewModel
+        detailView = DetailViewComponent()
         view.addSubview(detailView)
         
         detailView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().inset(150)
+            make.trailing.equalToSuperview()
         }
     }
-
     
     private func listenViewModel() {
         
@@ -42,7 +45,7 @@ class DetailViewController: BaseViewController<DetailViewModel> {
             
             switch state {
             case .done:
-                self?.detailView.reloadTableView()
+                self?.detailView.setData(data: self?.viewModel.getViewData())
             case .failure:
                 return
             case .loading:

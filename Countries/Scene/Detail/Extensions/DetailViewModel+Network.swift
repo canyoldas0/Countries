@@ -24,18 +24,18 @@ extension DetailViewModel {
         }
     }
     
-    private func fireApiCall(with request: URLRequest, with completion : @escaping (Result<CountryDetailResponse, ErrorResponse>) -> Void) {
+    private func fireApiCall(with request: URLRequest, with completion : @escaping DetailResultBlock) {
         
         NetworkManager.shared.sendRequest(urlRequest: request, completion: completion)
     }
     
-     func apiCallHandler(from response: CountryDetailResponse) {
+    func apiCallHandler(from response: CountryDetailResponse) {
         
         dataFormatter.setData(with: response)
         // We let VC know that we have data now.
         viewState?(.done)
         
     }
-
-
+    
+    
 }
