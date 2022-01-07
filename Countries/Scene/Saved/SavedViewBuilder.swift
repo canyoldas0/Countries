@@ -11,9 +11,8 @@ import UIKit
 class SavedViewBuilder {
     
     class func build() -> UIViewController  {
-        let persistencyManager = PersistencyDataManager()
-        let dataFormatter = HomeViewDataFormatter(persistencyManager: persistencyManager)
-        let viewModel = SavedViewModel(dataFormatter: dataFormatter, persistencyManager: persistencyManager)
+        let dataFormatter = HomeViewDataFormatter()
+        let viewModel = SavedViewModel(dataFormatter: dataFormatter)
         
         let viewController = SavedViewController(viewModel: viewModel)
         dataFormatter.delegate = viewModel

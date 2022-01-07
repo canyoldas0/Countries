@@ -11,8 +11,7 @@ import UIKit
 class DetailViewBuilder {
     
     class func build(with request: CountryDetailRequest) -> UIViewController {
-        let persistencyManager = PersistencyDataManager()
-        let dataFormatter = DetailViewDataFormatter(persistencyManager: persistencyManager)
+        let dataFormatter = DetailViewDataFormatter()
         let viewModel = DetailViewModel(dataFormatter: dataFormatter,
                                         request: request)
         let viewController = DetailViewController(viewModel: viewModel)

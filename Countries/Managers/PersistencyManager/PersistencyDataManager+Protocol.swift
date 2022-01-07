@@ -22,6 +22,7 @@ struct PersistencyContainer: Codable {
 
 class PersistencyDataManager: PersistencyDataProtocol {
     
+    static let shared = PersistencyDataManager()
     static let KEY = "FavoriteCountries"
     
     private let queue = DispatchQueue(label: "snycQueue", qos: .default)

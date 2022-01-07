@@ -22,11 +22,6 @@ protocol DetailViewDataFormatterProtocol {
 class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
     
     private var detailElement: CountryDetail?
-    private let persistencyManager: PersistencyDataProtocol!
-    
-    init(persistencyManager: PersistencyDataProtocol) {
-        self.persistencyManager = persistencyManager
-    }
     
     func setData(with response: CountryDetailResponse) {
         self.detailElement = response.data
@@ -43,14 +38,14 @@ class DetailViewDataFormatter: DetailViewDataFormatterProtocol {
             countryCode: getCountryCode(),
             id: getItemId(),
             countryTitle: getTitle(),
-            saveButtonData: SaveButtonViewData(state: persistencyManager.checkExists(with: createCountryData()),
+            saveButtonData: SaveButtonViewData(state: PersistencyDataManager.shared.checkExists(with: createCountryData()),
                                                isSaved: saveItemListener))
         
     }
     
     private func saveItemOperation(with value: Bool) {
         let item = createCountryData()
-        value ? persistencyManager.addFavorite(with: item) : persistencyManager.removeFavourite(with: item)
+        value ? PersistencyDataManager.shared.addFavorite(with: item) : PersistencyDataManager.shared.removeFavourite(with: item)
     }
     
     private lazy var saveItemListener: BooleanBlock = { [weak self] value in

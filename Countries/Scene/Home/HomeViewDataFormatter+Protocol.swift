@@ -25,12 +25,6 @@ protocol HomeViewDataFormatterProtocol {
 class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     
     weak var delegate: DataPersistencyStatusProtocol?
-    
-    let persistencyManager: PersistencyDataProtocol!
-    
-     init(persistencyManager: PersistencyDataProtocol) {
-        self.persistencyManager = persistencyManager
-    }
         
     private var list: [CountryData] = [CountryData]()
     
@@ -41,7 +35,7 @@ class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     func getItem(at index: Int) -> GenericDataProtocol? {
         return CountryListTableViewCellData(countryName: getTitle(at: index),
                                             saveButtonData:
-                                                SaveButtonViewData(state: persistencyManager.checkExists(with: list[index]),
+                                                SaveButtonViewData(state: PersistencyDataManager.shared.checkExists(with: list[index]),
                                                                    isSaved: { [weak self] value in
             self?.saveItemOperation(at: index, with: value)
         })
@@ -50,7 +44,7 @@ class HomeViewDataFormatter: HomeViewDataFormatterProtocol {
     
     private func saveItemOperation(at index: Int, with value: Bool) {
         let item = list[index]
-        value ? persistencyManager.addFavorite(with: item) : persistencyManager.removeFavourite(with: item)
+        value ? PersistencyDataManager.shared.addFavorite(with: item) : PersistencyDataManager.shared.removeFavourite(with: item)
         self.delegate?.statusChanged()
     }
     

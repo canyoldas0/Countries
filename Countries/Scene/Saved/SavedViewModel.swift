@@ -11,14 +11,11 @@ import Foundation
 class SavedViewModel {
     
     var dataFormatter: HomeViewDataFormatterProtocol!
-    var persistencyManager: PersistencyDataProtocol!
     var viewState: ViewStateBlock?
     var detailState: DetailRequestBlock?
     
-     init(dataFormatter: HomeViewDataFormatterProtocol,
-                  persistencyManager: PersistencyDataProtocol) {
+     init(dataFormatter: HomeViewDataFormatterProtocol) {
         self.dataFormatter = dataFormatter
-        self.persistencyManager = persistencyManager
     }
     
     func subscribeViewState(with completion: @escaping ViewStateBlock) {
@@ -32,7 +29,7 @@ class SavedViewModel {
     func getData() {
         viewState?(.loading)
         self.dataFormatter.refresh()
-        persistencyManager.getFavoriteItems { [weak self] data in
+        PersistencyDataManager.shared.getFavoriteItems { [weak self] data in
             self?.dataFormatter.setData(with: data)
             self?.viewState?(.done)
         }
